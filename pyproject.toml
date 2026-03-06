@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hivetoolkit"
+version = "1.0.0"
+description = "A Python toolkit for interactive visualization and analysis of Hive-format mass spectrometry data."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [
+  {name = "DDBJ"}
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+  "Intended Audience :: Science/Research"
+]
+dependencies = [
+  "numpy>=1.23",
+  "plotly>=5.15",
+  "hive-data-access>=0.17.0"
+]
+
+[project.optional-dependencies]
+notebook = [
+  "nbformat",
+  "ipython"
+]
+
+[project.urls]
+Homepage = "https://github.com/ddbj/hivetoolkit"
+Repository = "https://github.com/ddbj/hivetoolkit"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"*" = ["*.js"]
